@@ -49,8 +49,8 @@ class GameFragment: Fragment() {
         binding.endButton.setOnClickListener{ onEndGame()}
         binding.buttonLeft.setOnClickListener{ onLeftMove()}
         binding.buttonRight.setOnClickListener{ onRightMove()}
-        binding.buttonUp.setOnClickListener{ onRightMove()}
-        binding.buttondown.setOnClickListener{ onRightMove()}
+        binding.buttonUp.setOnClickListener{ onUpMove()}
+        binding.buttondown.setOnClickListener{ onDownMove()}
 
     }
 
@@ -67,7 +67,21 @@ class GameFragment: Fragment() {
     }
     private fun onRightMove(){
         var flag:Boolean
-        flag = viewModel.nextNumber()
+        flag = viewModel.rightMoveData()
+        if (flag == false) {
+            Toast.makeText(activity, "Game Over",Toast.LENGTH_LONG).show()
+        }
+    }
+    private fun onUpMove(){
+        var flag:Boolean
+        flag = viewModel.upMoveData()
+        if (flag == false) {
+            Toast.makeText(activity, "Game Over",Toast.LENGTH_LONG).show()
+        }
+    }
+    private fun onDownMove(){
+        var flag:Boolean
+        flag = viewModel.downMoveData()
         if (flag == false) {
             Toast.makeText(activity, "Game Over",Toast.LENGTH_LONG).show()
         }
