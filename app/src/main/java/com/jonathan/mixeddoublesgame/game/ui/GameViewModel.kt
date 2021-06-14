@@ -22,7 +22,7 @@ class GameViewModel: ViewModel() {
 
     init {
         Log.d("GameFragment", "GameViewModel created!")
-        _dataObservable.value = arrayListOf(arrayListOf(0,0,0,0),arrayListOf(0,0,0,0),arrayListOf(0,0,0,0),arrayListOf(0,0,0,0))
+        _dataObservable.value  = arrayListOf(arrayListOf(0,0,0,0),arrayListOf(0,0,0,0),arrayListOf(0,0,0,0),arrayListOf(0,0,0,0))!!!!
 
     }
     override fun onCleared() {

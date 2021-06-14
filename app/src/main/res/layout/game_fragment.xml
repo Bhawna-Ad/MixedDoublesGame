@@ -26,12 +26,14 @@
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="4dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(0))}"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(0) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(0).get(0)))  }"
                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border1"
+               android:gravity="center"
                tools:text="1111" />
 
            <TextView
@@ -39,135 +41,151 @@
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="4dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(1))}"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(1) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(0).get(1)))  }"
                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-                />
+               android:background="@{(gameViewModel.dataObservable.get(0).get(1) == 4) ? @drawable/border1 : @drawable/border2}"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView3"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="4dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(2))}"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(0).get(2)))  }"
                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView4"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="4dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(3))}"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(0).get(3) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(0).get(3)))  }"
                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.837"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView5"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="64dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(0))}"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(0) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(1).get(0)))  }"
                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView6"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="60dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(1))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(1) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(1).get(1)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="@+id/textView2" />
+               app:layout_constraintTop_toTopOf="@+id/textView2"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView7"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="64dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(2))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(1).get(2)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
+
 
            <TextView
                android:id="@+id/textView8"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="64dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(3))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(1).get(3) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(1).get(3)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView9"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="128dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(0))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(0) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(2).get(0)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
            <TextView
                android:id="@+id/textView10"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="128dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(1))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(1) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(2).get(1)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
            <TextView
                android:id="@+id/textView11"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="128dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(2))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(2).get(2)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView12"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="128dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(3))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(2).get(3) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(2).get(3)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <TextView
                android:id="@+id/textView13"
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="188dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(0))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(0) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(0)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
 
 
@@ -176,11 +194,12 @@
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="188dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(1))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(1) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(1)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
 
 
@@ -189,11 +208,12 @@
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="188dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(2))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(2)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
 
 
@@ -202,12 +222,12 @@
                android:layout_width="75dp"
                android:layout_height="50dp"
                android:layout_marginTop="188dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(3))}"
-               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(3) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(3)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
-
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/border"
+               android:gravity="center" />
 
            <Button
                android:id="@+id/buttondown"
