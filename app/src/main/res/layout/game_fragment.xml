@@ -47,7 +47,7 @@
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@{(gameViewModel.dataObservable.get(0).get(1) == 4) ? @drawable/border1 : @drawable/border2}"
+               android:background="@{(gameViewModel.dataObservable.get(0).get(1) == 0) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(1) == 64 ) ? @drawable/border1 :  @drawable/border3) }"
                android:gravity="center" />
 
            <TextView
