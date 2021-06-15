@@ -18,7 +18,7 @@
 
        <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
-           android:layout_height="match_parent"
+           android:layout_height="wrap_content"
            tools:context=".game.ui.GameFragment">
 
            <TextView
@@ -32,7 +32,7 @@
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border1"
+               android:background="@{(gameViewModel.dataObservable.get(0).get(0) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(0) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(0).get(0) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(0).get(0) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(0).get(0) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center"
                tools:text="1111" />
 
@@ -47,7 +47,7 @@
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@{(gameViewModel.dataObservable.get(0).get(1) == 0) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(1) == 64 ) ? @drawable/border1 :  @drawable/border3) }"
+               android:background="@{(gameViewModel.dataObservable.get(0).get(1) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(1) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(0).get(1) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(0).get(1) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(0).get(1) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -61,7 +61,7 @@
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(0).get(2) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(2) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(0).get(2) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(0).get(2) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(0).get(2) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -75,7 +75,7 @@
                app:layout_constraintHorizontal_bias="0.837"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(0).get(3) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(0).get(3) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(0).get(3) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(0).get(3) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(0).get(3) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -89,7 +89,7 @@
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(1).get(0) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(1).get(0) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(1).get(0) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(1).get(0) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(1).get(0) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -101,7 +101,7 @@
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="@+id/textView2"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(1).get(1) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(1).get(1) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(1).get(1) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(1).get(1) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(1).get(1) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -113,7 +113,7 @@
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(1).get(2) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(1).get(2) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(1).get(2) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(1).get(2) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(1).get(2) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
 
@@ -126,7 +126,7 @@
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(1).get(3) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(1).get(3) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(1).get(3) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(1).get(3) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(1).get(3) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -138,7 +138,7 @@
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(2).get(0) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(2).get(0) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(2).get(0) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(2).get(0) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(2).get(0) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) )  ) ) }"
                android:gravity="center" />
            <TextView
                android:id="@+id/textView10"
@@ -149,7 +149,7 @@
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(2).get(1) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(2).get(1) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(2).get(1) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(2).get(1) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(2).get(1) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
            <TextView
                android:id="@+id/textView11"
@@ -160,7 +160,7 @@
                app:layout_constraintHorizontal_bias="0.562"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(2).get(2) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(2).get(2) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(2).get(2) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(2).get(2) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(2).get(2) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -172,7 +172,7 @@
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(2).get(3) &lt; 16 ) ? @drawable/border : ((gameViewModel.dataObservable.get(2).get(3) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(2).get(3) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(2).get(3) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(2).get(3) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <TextView
@@ -184,7 +184,7 @@
                app:layout_constraintHorizontal_bias="0.026"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(3).get(0) &lt; 16 ) ? @drawable/border :((gameViewModel.dataObservable.get(3).get(0) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(3).get(0) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(3).get(0) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(3).get(0) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
 
@@ -198,22 +198,22 @@
                app:layout_constraintHorizontal_bias="0.306"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(3).get(1) &lt; 16 ) ? @drawable/border :((gameViewModel.dataObservable.get(3).get(1) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(3).get(1) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(3).get(1) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(3).get(1) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
 
 
            <TextView
                android:id="@+id/textView15"
-               android:layout_width="75dp"
-               android:layout_height="50dp"
-               android:layout_marginTop="188dp"
-               android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(2)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintHorizontal_bias="0.562"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
-               android:gravity="center" />
+           android:layout_width="75dp"
+           android:layout_height="50dp"
+           android:layout_marginTop="188dp"
+           android:text="@{String.valueOf(gameViewModel.dataObservable.get(3).get(2) == 0 ? `` : String.valueOf(gameViewModel.dataObservable.get(3).get(2)))  }"               android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"               app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.562"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:background="@{(gameViewModel.dataObservable.get(3).get(2) &lt; 16 ) ? @drawable/border :((gameViewModel.dataObservable.get(3).get(2) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(3).get(2) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(3).get(2) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(3).get(2) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
+           android:gravity="center" />
 
 
 
@@ -226,7 +226,7 @@
                app:layout_constraintHorizontal_bias="0.842"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               android:background="@drawable/border"
+               android:background="@{(gameViewModel.dataObservable.get(3).get(3) &lt; 16 ) ? @drawable/border :((gameViewModel.dataObservable.get(3).get(3) &lt; 64  ) ? @drawable/border1 :  ((gameViewModel.dataObservable.get(3).get(3) &lt; 128 ) ? @drawable/border2 :  ((gameViewModel.dataObservable.get(3).get(3) &lt; 256  ) ? @drawable/border3 :  ((gameViewModel.dataObservable.get(3).get(3) &lt; 512 ) ? @drawable/border4 :  @drawable/border5) ) ) ) }"
                android:gravity="center" />
 
            <Button
