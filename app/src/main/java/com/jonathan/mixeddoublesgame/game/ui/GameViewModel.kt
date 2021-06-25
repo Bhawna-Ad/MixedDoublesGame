@@ -90,20 +90,34 @@ class GameViewModel: ViewModel() {
     fun LeftMoveData(): Boolean{
         val tempval = _dataObservable.value
         for (j in 0..3)
-          for (i in 3 downTo 1) {
-              if (tempval!![j][i - 1] == 0) {
-                  tempval[j][i - 1] = tempval[j][i]
-                  tempval[j][i]= 0
-              }
-              if (tempval!![j][i] == tempval!![j][i - 1]) {
-                  Log.d("GameView", "$tempval[j][i] $tempval[j][i-1] $j $i")
-                  tempval!![j][i - 1] += tempval[j][i]
-                  tempval!![j][i] = 0
-              } else {
-                  Log.d("GameView", " else $tempval[j][i] $tempval[j][i-1] $j $i")
-                  Log.d("GameView", " else $tempval!![j][i] $tempval!![j][i-1] $j $i")
-              }
-          }
+            for (i in 1..3) {
+                if (tempval!![j][i - 1] == 0) {
+                    tempval[j][i - 1] = tempval[j][i]
+                    tempval[j][i]= 0
+                }
+
+            }
+        for (j  in 0..3)
+            for (i in 1..3){
+                if (tempval!![j][i] == tempval!![j][i - 1]) {
+                    Log.d("GameView", "$tempval[j][i] $tempval[j][i-1] $j $i")
+                    tempval!![j][i - 1] = tempval!![j][i - 1] *2
+                    tempval!![j][i] = 0
+                }
+            }
+        repeat(3) {
+            for (j in 0..3)
+                for (i in 1..3) {
+                    if (tempval!![j][i - 1] == 0) {
+                        tempval[j][i - 1] = tempval[j][i]
+                        tempval[j][i] = 0
+
+                        Log.d("GameView", " else $tempval[j][i] $tempval[j][i-1] $j $i")
+                        Log.d("GameView", " else $tempval!![j][i] $tempval!![j][i-1] $j $i")
+                    }
+
+                }
+        }
 
         _dataObservable.value= tempval
         gameFlag=getNextNumber()
@@ -114,21 +128,34 @@ class GameViewModel: ViewModel() {
     fun rightMoveData(): Boolean{
         val tempval = _dataObservable.value
         for (j in 0..3)
-            for (i in 0..2 ) {
+            for (i in 2 downTo 0 ) {
                 if (tempval!![j][i + 1] == 0) {
                     tempval[j][i + 1] = tempval[j][i]
                     tempval[j][i]= 0
                 }
+
+            }
+        for (j  in 0..3)
+            for ( i in 2 downTo 0)
+            {
                 if (tempval!![j][i] == tempval!![j][i + 1]) {
                     Log.d("GameView", "$tempval[j][i] $tempval[j][i+1] $j $i")
-                    tempval!![j][i + 1] += tempval[j][i]
+                    tempval!![j][i + 1] = tempval!![j][i + 1] *2
                     tempval!![j][i] = 0
-                } else {
-                    Log.d("GameView", " else $tempval[j][i] $tempval[j][i-1] $j $i")
-                    Log.d("GameView", " else $tempval!![j][i] $tempval!![j][i-1] $j $i")
                 }
             }
+        repeat(3) {
+            for (j in 0..3)
+                for (i in 2 downTo 0) {
+                    if (tempval!![j][i + 1] == 0) {
+                        tempval[j][i + 1] = tempval[j][i]
+                        tempval[j][i] = 0
+                        Log.d("GameView", " right  $tempval[j][i] $tempval[j][i-1] $j $i")
+                        Log.d("GameView", " right  $tempval!![j][i] $tempval!![j][i-1] $j $i")
+                    }
 
+                }
+        }
         _dataObservable.value= tempval
         gameFlag=getNextNumber()
         return gameFlag
@@ -143,22 +170,33 @@ class GameViewModel: ViewModel() {
 
     fun upMoveData(): Boolean{
         val tempval = _dataObservable.value
-        for (j in 3 downTo 1)
+        for (j in 1..3)
             for (i in 0..3 ) {
                 if (tempval!![j -1 ][i ] == 0) {
                     tempval[j-1][i] = tempval[j][i]
                     tempval[j][i]= 0
                 }
+
+            }
+        for (j in 1..3)
+            for (i in 0..3)
+            {
                 if (tempval!![j][i] == tempval!![j-1][i]) {
                     Log.d("GameView", "$tempval[j][i] $tempval[j-1][i] $j $i")
-                    tempval!![j-1][i] += tempval[j][i]
+                    tempval!![j-1][i] = tempval[j-1][i]*2
                     tempval!![j][i] = 0
-                } else {
-                    Log.d("GameView", " else $tempval[j][i] $tempval[j-1][i] $j $i")
-                    Log.d("GameView", " else $tempval!![j][i] $tempval!![j-1][i] $j $i")
                 }
             }
+        repeat(3) {
+            for (j in 1..3)
+                for (i in 0..3) {
+                    if (tempval!![j - 1][i] == 0) {
+                        tempval[j - 1][i] = tempval[j][i]
+                        tempval[j][i] = 0
+                    }
 
+                }
+        }
         _dataObservable.value= tempval
         gameFlag=getNextNumber()
         return gameFlag
@@ -167,22 +205,33 @@ class GameViewModel: ViewModel() {
 
     fun downMoveData(): Boolean{
         val tempval = _dataObservable.value
-        for (j in 0..2)
+        for (j in 2 downTo 0)
             for (i in 0..3 ) {
                 if (tempval!![j+1 ][i ] == 0) {
                     tempval[j+1][i] = tempval[j][i]
                     tempval[j][i]= 0
                 }
+
+            }
+        for (j in 2 downTo 0)
+            for (i in 0..3)
+            {
                 if (tempval!![j][i] == tempval!![j+1][i]) {
                     Log.d("GameView", "$tempval[j][i] $tempval[j+1][i] $j $i")
-                    tempval!![j+1][i] += tempval[j][i]
+                    tempval!![j+1][i] =tempval!![j+1][i]*2
                     tempval!![j][i] = 0
-                } else {
-                    Log.d("GameView", " else $tempval[j][i] $tempval[j+1][i] $j $i")
-                    Log.d("GameView", " else $tempval!![j][i] $tempval!![j+1][i] $j $i")
                 }
             }
+        repeat(3) {
+            for (j in 2 downTo 0)
+                for (i in 0..3) {
+                    if (tempval!![j + 1][i] == 0) {
+                        tempval[j + 1][i] = tempval[j][i]
+                        tempval[j][i] = 0
+                    }
 
+                }
+        }
         _dataObservable.value= tempval
         gameFlag=getNextNumber()
         return gameFlag
